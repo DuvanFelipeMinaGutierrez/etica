@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>Millonario del Comercio - Ética Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="glow-orb"></div>
+        <div class="glow-orb orb-2"></div>
+    </div>
+
+    <div class="app-container" id="app">
+        
+        <!-- Start Screen -->
+        <div class="screen active" id="start-screen">
+            <h1 class="glitch-title">MILLONARIO<br><span>DEL COMERCIO</span></h1>
+            <p class="subtitle">Especial: Ética Profesional</p>
+            <button class="btn-primary" id="btn-start">Comenzar Juego</button>
+            <p style="margin-top:20px; color:var(--text-muted); font-size:0.9rem;">
+                *Nota: Haz clic para permitir el audio en el navegador
+            </p>
+        </div>
+
+        <!-- Game Screen -->
+        <div class="screen" id="game-screen">
+            <div class="game-layout">
+                <div class="main-content">
+                    
+                    <!-- Top Bar: Lifelines and Timer -->
+                    <div class="top-bar glass-panel">
+                        <div class="lifelines">
+                            <button class="lifeline-btn" id="btn-5050" title="Comodín 50:50">
+                                <span class="icon">50:50</span>
+                            </button>
+                            <button class="lifeline-btn" id="btn-friend" title="Llamar a un Colega">
+                                <span class="icon">📞 Amigo</span>
+                            </button>
+                        </div>
+                        <div class="timer-container">
+                            <div class="timer" id="timer">60</div>
+                        </div>
+                    </div>
+
+                    <div class="question-container glass-panel">
+                        <div class="question-level">Pregunta <span id="current-q-num">1</span> de 10</div>
+                        <p class="question-text" id="question-text">Cargando pregunta...</p>
+                    </div>
+                    
+                    <div class="options-grid" id="options-grid">
+                        <button class="option-btn glass-panel" data-option="A" id="opt-A">
+                            <span class="option-letter">A:</span> <span class="option-text">Ética Estoica</span>
+                        </button>
+                        <button class="option-btn glass-panel" data-option="B" id="opt-B">
+                            <span class="option-letter">B:</span> <span class="option-text">Ética Utilitarista</span>
+                        </button>
+                        <button class="option-btn glass-panel" data-option="C" id="opt-C">
+                            <span class="option-letter">C:</span> <span class="option-text">Ética Epicúrea</span>
+                        </button>
+                        <button class="option-btn glass-panel" data-option="D" id="opt-D">
+                            <span class="option-letter">D:</span> <span class="option-text">Ética Aristotélica</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sidebar glass-panel">
+                    <h3>Niveles</h3>
+                    <ul class="ladder" id="ladder">
+                        <!-- Levels will be injected via JS -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div class="screen" id="result-screen">
+            <div class="result-container glass-panel">
+                <h1 id="result-title">¡Juego Terminado!</h1>
+                <p id="result-message"></p>
+                <div class="prize-won">Premio acumulado: <br><span id="final-prize">$0</span></div>
+                <button class="btn-primary" id="btn-restart">Jugar de Nuevo</button>
+            </div>
+        </div>
+
+        <!-- Friend Modal -->
+        <div class="modal-overlay" id="friend-modal">
+            <div class="modal-content glass-panel">
+                <h2 style="color:var(--accent); margin-bottom:1rem;">Llamada al Colega Experto</h2>
+                <div class="calling-animation" id="calling-anim">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+                <p id="friend-text" style="font-size:1.2rem; line-height:1.5; margin-bottom:2rem;">Llamando...</p>
+                <button class="btn-primary" id="btn-close-friend" style="display:none; width:100%;">Colgar y Volver</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
